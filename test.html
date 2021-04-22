@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <title>Document</title>
+    <style>
+      body {
+        color: #768390;
+        background: #fff;
+        font-family: "Effra", Helvetica, sans-serif;
+        padding: 0;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: #3d4351;
+        margin-top: 0;
+      }
+
+      a {
+        color: #09c;
+      }
+      a:hover {
+        color: #2fcbff;
+        text-decoration: none;
+      }
+
+      .example-header {
+        background: #3d4351;
+        color: #fff;
+        font-weight: 300;
+        padding: 3em 1em;
+        text-align: center;
+      }
+      .example-header h1 {
+        color: #fff;
+        font-weight: 300;
+        margin-bottom: 20px;
+      }
+      .example-header p {
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        font-weight: 700;
+      }
+
+      .container-fluid .row {
+        padding: 0 0 4em 0;
+      }
+      .container-fluid .row:nth-child(even) {
+        background: #f1f4f5;
+      }
+
+      .example-title {
+        text-align: center;
+        margin-bottom: 60px;
+        padding: 3em 0;
+        border-bottom: 1px solid #e4eaec;
+      }
+      .example-title p {
+        margin: 0 auto;
+        font-size: 16px;
+        max-width: 500px;
+      }
+
+      /*==================================
+    TIMELINE
+==================================*/
+      /*-- GENERAL STYLES
+------------------------------*/
+      .timeline {
+        line-height: 1.6em;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+      }
+      .timeline h1,
+      .timeline h2,
+      .timeline h3,
+      .timeline h4,
+      .timeline h5,
+      .timeline h6 {
+        line-height: inherit;
+      }
+
+      /*----- TIMELINE ITEM -----*/
+      .timeline-item {
+        padding-left: 40px;
+        position: relative;
+      }
+      .timeline-item:last-child {
+        padding-bottom: 0;
+      }
+
+      /*----- TIMELINE INFO -----*/
+      .timeline-info {
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 3px;
+        margin: 0 0 0.5em 0;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+
+      /*----- TIMELINE MARKER -----*/
+      .timeline-marker {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 15px;
+      }
+      .timeline-marker:before {
+        background: #09c;
+        border: 3px solid transparent;
+        border-radius: 100%;
+        content: "";
+        display: block;
+        height: 15px;
+        position: absolute;
+        top: 4px;
+        left: 0;
+        width: 15px;
+        transition: background 0.3s ease-in-out, border 0.3s ease-in-out;
+      }
+      .timeline-marker:after {
+        content: "";
+        width: 3px;
+        background: #ccd5db;
+        display: block;
+        position: absolute;
+        top: 24px;
+        bottom: 0;
+        left: 6px;
+      }
+      .timeline-item:last-child .timeline-marker:after {
+        content: none;
+      }
+
+      .timeline-item:not(.period):hover .timeline-marker:before {
+        background: transparent;
+        border: 3px solid #09c;
+      }
+
+      /*----- TIMELINE CONTENT -----*/
+      .timeline-content {
+        padding-bottom: 40px;
+      }
+      .timeline-content p:last-child {
+        margin-bottom: 0;
+      }
+
+      /*----- TIMELINE PERIOD -----*/
+      .period {
+        padding: 0;
+      }
+      .period .timeline-info {
+        display: none;
+      }
+      .period .timeline-marker:before {
+        background: transparent;
+        content: "";
+        width: 15px;
+        height: auto;
+        border: none;
+        border-radius: 0;
+        top: 0;
+        bottom: 30px;
+        position: absolute;
+        border-top: 3px solid #ccd5db;
+        border-bottom: 3px solid #ccd5db;
+      }
+      .period .timeline-marker:after {
+        content: "";
+        height: 32px;
+        top: auto;
+      }
+      .period .timeline-content {
+        padding: 40px 0 70px;
+      }
+      .period .timeline-title {
+        margin: 0;
+      }
+
+      /*----------------------------------------------
+    MOD: TIMELINE SPLIT
+----------------------------------------------*/
+      @media (min-width: 500px) {
+        .timeline-split .timeline,
+        .timeline-centered .timeline {
+          display: table;
+        }
+        .timeline-split .timeline-item,
+        .timeline-centered .timeline-item {
+          display: table-row;
+          padding: 0;
+        }
+        .timeline-split .timeline-info,
+        .timeline-centered .timeline-info,
+        .timeline-split .timeline-marker,
+        .timeline-centered .timeline-marker,
+        .timeline-split .timeline-content,
+        .timeline-centered .timeline-content,
+        .timeline-split .period .timeline-info,
+        .timeline-centered .period .timeline-info {
+          display: table-cell;
+          vertical-align: top;
+        }
+        .timeline-split .timeline-marker,
+        .timeline-centered .timeline-marker {
+          position: relative;
+        }
+        .timeline-split .timeline-content,
+        .timeline-centered .timeline-content {
+          padding-left: 30px;
+        }
+        .timeline-split .timeline-info,
+        .timeline-centered .timeline-info {
+          padding-right: 30px;
+        }
+        .timeline-split .period .timeline-title,
+        .timeline-centered .period .timeline-title {
+          position: relative;
+          left: -45px;
+        }
+      }
+
+      /*----------------------------------------------
+    MOD: TIMELINE CENTERED
+----------------------------------------------*/
+      @media (min-width: 709px) {
+        .timeline-centered,
+        .timeline-centered .timeline-item,
+        .timeline-centered .timeline-info,
+        .timeline-centered .timeline-marker,
+        .timeline-centered .timeline-content {
+          display: block;
+          margin: 0;
+          padding: 0;
+        }
+        .timeline-centered .timeline-item {
+          padding-bottom: 40px;
+          overflow: hidden;
+        }
+        .timeline-centered .timeline-marker {
+          position: absolute;
+          left: 50%;
+          margin-left: -7.5px;
+        }
+        .timeline-centered .timeline-info,
+        .timeline-centered .timeline-content {
+          width: 50%;
+        }
+        .timeline-centered > .timeline-item:nth-child(odd) .timeline-info {
+          float: left;
+          text-align: right;
+          padding-right: 30px;
+        }
+        .timeline-centered > .timeline-item:nth-child(odd) .timeline-content {
+          float: right;
+          text-align: left;
+          padding-left: 30px;
+        }
+        .timeline-centered > .timeline-item:nth-child(even) .timeline-info {
+          float: right;
+          text-align: left;
+          padding-left: 30px;
+        }
+        .timeline-centered > .timeline-item:nth-child(even) .timeline-content {
+          float: left;
+          text-align: right;
+          padding-right: 30px;
+        }
+        .timeline-centered > .timeline-item.period .timeline-content {
+          float: none;
+          padding: 0;
+          width: 100%;
+          text-align: center;
+        }
+        .timeline-centered .timeline-item.period {
+          padding: 50px 0 90px;
+        }
+        .timeline-centered .period .timeline-marker:after {
+          height: 30px;
+          bottom: 0;
+          top: auto;
+        }
+        .timeline-centered .period .timeline-title {
+          left: auto;
+        }
+      }
+
+      /*----------------------------------------------
+    MOD: MARKER OUTLINE
+----------------------------------------------*/
+      .marker-outline .timeline-marker:before {
+        background: transparent;
+        border-color: #09c;
+      }
+      .marker-outline .timeline-item:hover .timeline-marker:before {
+        background: #09c;
+      }
+    </style>
+  </head>
+  <body>
+    <script src="https://use.typekit.net/bkt6ydm.js"></script>
+    <script>
+      try {
+        Typekit.load({ async: true });
+      } catch (e) {}
+    </script>
+    <div class="container-fluid">
+      <div class="row example-centered">
+        <div class="col-md-12 example-title">
+          <h2>Our History</h2>
+          <p>
+            We were founded in 1938, and today represent the interests of over
+            1,100 members and the wider community and voluntary sector.
+          </p>
+        </div>
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+          <ul class="timeline timeline-centered">
+            <li class="timeline-item">
+              <div class="timeline-info">
+                <span>1938</span>
+              </div>
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <h3 class="timeline-title">Foundation</h3>
+                <p>
+                  Founded as the Northern Ireland Council for Social Service in
+                  1938 after the Great Depression, with the purpose of
+                  'promoting the common good' and co-ordinating the scattered
+                  efforts of voluntary personal services in response to the
+                  prevailing high levels of unemployment.
+                </p>
+              </div>
+            </li>
+            <li class="timeline-item">
+              <div class="timeline-info">
+                <span>1939-1948</span>
+              </div>
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <h3 class="timeline-title">The First Decade</h3>
+                <p>
+                  The first decade of the existence of the NICSS was profoundly
+                  affected by the War. While the initial focus had been on
+                  stimulating the foundation of clubs, garden plot associations
+                  and work camps, this quickly shifted to addressing the social
+                  problems stemming from the mass evacuation of children, the
+                  transforming role of women, and funding of legal assistance
+                  for the poor.
+                </p>
+              </div>
+            </li>
+            <li class="timeline-item period">
+              <div class="timeline-info"></div>
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <h2 class="timeline-title">Image</h2>
+              </div>
+            </li>
+            <li class="timeline-item">
+              <div class="timeline-info">
+                <span>1949-1958</span>
+              </div>
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <h3 class="timeline-title">Disability and eldery welfare</h3>
+                <p>
+                  The Council moved to Bryson House from its first offices at 29
+                  Wellington Place in Belfast. A residential home and a
+                  specialist care centre for older people were established,
+                  along with over 40 Meals on Wheels clubs. A standing committee
+                  for disabled people, which later became Disability Action, was
+                  formed. The Council took responsibility of housing an influx
+                  of 600 Hungarian refugees in 1956.
+                </p>
+              </div>
+            </li>
+            <li class="timeline-item">
+              <div class="timeline-info">
+                <span>1959-1968</span>
+              </div>
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <h3 class="timeline-title">
+                  Social welfare, folklife and traditions
+                </h3>
+                <p>
+                  While progressive welfare policies helped to clear slums, the
+                  Council sought to ensure that community identities were
+                  protected by local groups. The Committee of Ulster Folklife
+                  and Traditions was set up and supported in 1962. Regional
+                  social service councils were set up to bring together existing
+                  voluntary organistions in Derry, Bangor and Antrim.
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
