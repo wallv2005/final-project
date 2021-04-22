@@ -14,7 +14,7 @@
     <script>
         setTimeout(function(){
           // how to redirect in js
-          window.location.replace("http://127.0.0.1:5500/project/app.html")
+          window.location.replace("./app.html")
         },5000)
       </script>
       <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
