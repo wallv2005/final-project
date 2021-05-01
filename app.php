@@ -35,7 +35,7 @@
     />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
-    <link rel="stylesheet" href="sweetalert2.min.css" />
+    <link rel="stylesheet" href="./packet/sweetalert2.css" />
     <title>mycv</title>
   </head>
 
@@ -236,7 +236,7 @@
           </div>
         </div>
       </section>
-      <section data-aos="fade-up-right" id="references">
+      <!-- <section data-aos="fade-up-right" id="references">
         <div class="container-fluid">
           <div class="row example-centered">
             <div class="col-md-12 example-title">
@@ -286,7 +286,7 @@
             </div>
           </div>
         </div>
-      </section>
+      </section> -->
       <section data-aos="fade-up-left" id="contact">
         <div class="container-fluid">
           <div class="row example-centered">
@@ -295,68 +295,68 @@
             </div>
             <div class="row">
               <form id="contact-form">
-              <div class="column col-md-6">
-                <!-- Name input -->
-                <div class="form-group">
-                  <input 
-                    type="text"
-                    class="form-control"
-                    name="InputName"
-                    id="InputName"
-                    placeholder="Your name"
-                    required="required"
-                    data-error="Name is required."
-                  />
-                  <div class="help-block with-errors"></div>
+                <div class="column col-md-6">
+                  <!-- Name input -->
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="InputName"
+                      id="InputName"
+                      placeholder="Your name"
+                      required="required"
+                      data-error="Name is required."
+                    />
+                    <div class="help-block with-errors"></div>
+                  </div>
                 </div>
-              </div>
-              <div class="column col-md-6">
-                <!-- Email input -->
-                <div class="form-group">
-                  <input
-                    type="email"
-                    class="form-control"
-                    id="InputEmail"
-                    name="InputEmail"
-                    placeholder="Email"
-                    required="required"
-                    data-error="Email is required."
-                  />
-                  <div class="help-block with-errors"></div>
+                <div class="column col-md-6">
+                  <!-- Email input -->
+                  <div class="form-group">
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="InputEmail"
+                      name="InputEmail"
+                      placeholder="Email"
+                      required="required"
+                      data-error="Email is required."
+                    />
+                    <div class="help-block with-errors"></div>
+                  </div>
                 </div>
-              </div>
-              <div class="column col-md-12">
-                <!-- Email input -->
-                <div class="form-group">
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="InputSubject"
-                    name="InputSubject"
-                    placeholder="Subject"
-                    required="required"
-                    data-error="Subject is required."
-                  />
-                  <div class="help-block with-errors"></div>
+                <div class="column col-md-12">
+                  <!-- Email input -->
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="InputSubject"
+                      name="InputSubject"
+                      placeholder="Subject"
+                      required="required"
+                      data-error="Subject is required."
+                    />
+                    <div class="help-block with-errors"></div>
+                  </div>
                 </div>
-              </div>
-              <div class="column col-md-12">
-                <!-- Message textarea -->
-                <div class="form-group">
-                  <textarea
-                    name="InputMessage"
-                    id="InputMessage"
-                    class="form-control"
-                    rows="5"
-                    placeholder="Message"
-                    required="required"
-                    data-error="Message is required."
-                  ></textarea>
-                  <div class="help-block with-errors"></div>
+                <div class="column col-md-12">
+                  <!-- Message textarea -->
+                  <div class="form-group">
+                    <textarea
+                      name="InputMessage"
+                      id="InputMessage"
+                      class="form-control"
+                      rows="5"
+                      placeholder="Message"
+                      required="required"
+                      data-error="Message is required."
+                    ></textarea>
+                    <div class="help-block with-errors"></div>
+                  </div>
                 </div>
-              </div>
-              <button type="submit">Submit</button>
-            </form>
+                <button type="submit">Submit</button>
+              </form>
             </div>
           </div>
         </div>
@@ -376,17 +376,13 @@
       };
 
       function signinloading() {
-        window.location.replace(
-          "./signinloading.html"
-        );
+        window.location.replace("./signinloading.html");
       }
       document.getElementById("len6").onclick = function () {
         signuploading();
       };
       function signuploading() {
-        window.location.replace(
-          "./signuploading.html"
-        );
+        window.location.replace("./signuploading.html");
       }
     </script>
     <!-- <script>
@@ -404,7 +400,7 @@
 })
     </script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
+    <script src="./packet/sweetalert2.all.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
       AOS.init();
@@ -419,39 +415,40 @@
     ></script>
 
     <script>
+      let alertNe = () => {
+        Swal.fire("The Internet?", "That thing is still around?", "question");
+      };
+
       try {
         Typekit.load({ async: true });
       } catch (e) {}
 
-                       $('#contact-form').on('submit', function (e) {
-               e.preventDefault()
-   
-               var name = $("#InputName");
-               var email = $("#InputEmail");
-               var subject = $("#InputSubject");
-               var body = $("#InputMessage");
-               
-               
-   
-               $.ajax({
-                   url: './sendEmail.php',
-                   method: 'POST',
-                   dataType: 'json',
-                   data: {
-                       name: name.val(),
-                       email: email.val(),
-                       subject: subject.val(),
-                       body: body.val(),
-                   },
-                   success: function (data) {
-                    //    sweetAlert(data.status,data.response);
-                    console.log("success");
-                   }
-               });
-               return false;
-   
-           })
+      $("#contact-form").on("submit", function (e) {
+        e.preventDefault();
 
+        var name = $("#InputName");
+        var email = $("#InputEmail");
+        var subject = $("#InputSubject");
+        var body = $("#InputMessage");
+
+        $.ajax({
+          url: "./sendEmail.php",
+          method: "POST",
+          dataType: "json",
+          data: {
+            name: name.val(),
+            email: email.val(),
+            subject: subject.val(),
+            body: body.val(),
+          },
+          success: function (data) {
+            //    sweetAlert(data.status,data.response);
+            alertNe()
+            console.log("success");
+          },
+        });
+        return false;
+      });
     </script>
   </body>
 </html>
