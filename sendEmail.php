@@ -37,10 +37,10 @@ if(isset($_POST['name']) && isset($_POST['email'])){
 
 if ($mail->send()) {
     $status = "success";
-    $response = "Đã gửi email";
+    $response = "A reply will be returned soon";
 } else {
     $status = "error";
-    $response = "Có lỗi: <br><br>" . $mail->ErrorInfo;
+    $response = "Something wrong" . $mail->ErrorInfo;
 }
 
 exit(json_encode(array("status" => $status, "response" => $response)));

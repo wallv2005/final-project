@@ -415,8 +415,8 @@
     ></script>
 
     <script>
-      let alertNe = () => {
-        Swal.fire("The Internet?", "That thing is still around?", "question");
+      let alertNe = (title, content, status) => {
+        Swal.fire(title, content, status);
       };
 
       try {
@@ -443,7 +443,7 @@
           },
           success: function (data) {
             //    sweetAlert(data.status,data.response);
-            alertNe()
+            alertNe("Mail Sent", data.response,data.status)
             console.log("success");
           },
         });
