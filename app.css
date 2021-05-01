@@ -70,7 +70,9 @@ body{
 
 }
 
-
+.row > *{
+  padding: 10px 100px;
+}
 .hoverable {
     display: inline-block;
     backface-visibility: hidden;
@@ -209,7 +211,7 @@ body{
 .example-title {
   text-align: center;
   margin-bottom: 60px;
-  padding: 3em 0;
+  /* padding: 3em 0; */
   border-bottom: 1px solid #e4eaec;
 }
 .example-title p {
