@@ -37,7 +37,7 @@ if(isset($_POST['name']) && isset($_POST['email'])){
 
 if ($mail->send()) {
     $status = "success";
-    $response = "A reply will be returned soon";
+    $response = "A reply should be expected soon";
 } else {
     $status = "error";
     $response = "Something wrong" . $mail->ErrorInfo;
