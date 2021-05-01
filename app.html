@@ -36,7 +36,7 @@
     <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" /> -->
 
     <link rel="stylesheet" href="./packet/sweetalert2.css" />
-    <link rel="stylesheet" href="WOW-master/WOW-master/css/libs/animate.css">
+    <link rel="stylesheet" href="WOW-master/WOW-master/css/libs/animate.css" />
     <title>mycv</title>
   </head>
 
@@ -56,9 +56,9 @@
 
     <!-- intro -->
     <div class="intro" id="particles-js">
-      <div class="intro-content">
+      <div class="intro-content" style="text-align: center">
         <img class="avatar" src="./image/van1.jpg" alt="" />
-        <h1 style="color: #eebbc3">Đặng Thanh Vân</h1>
+        <h1 id="dom_name" style="color: #eebbc3">Đặng Thanh Vân</h1>
         <ul class="social-accounts light list-inline mb-0 mt-4">
           <li class="list-inline-item">
             <a href="https://www.instagram.com/thanhwvan/">
@@ -82,13 +82,8 @@
       <section class="wow fadeInUp" id="introduction">
         <div class="container-fluid">
           <div class="row example-centered">
-            <div class="col-md-12 example-title">
-              <h2 class="title">ABOUT ME</h2>
-              <hr />
-              <p>Xin chào, mình là Đặng Thanh Vân</p>
-              <p>Sau đây là một vài facts về mình:<br>
-                
-              </p>
+            <div id="dom_aboutme" class="col-md-12 example-title">
+              
             </div>
           </div>
         </div>
@@ -101,63 +96,8 @@
               <hr />
             </div>
             <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-              <ul class="timeline timeline-centered">
-                <li class="timeline-item">
-                  <div class="timeline-info">
-                    <span>SEP 2016-JUN 2020</span>
-                  </div>
-                  <div class="timeline-marker"></div>
-                  <div class="timeline-content">
-                    <h3 class="timeline-title">SECONDARY SCHOOL</h3>
-                    <p>
-                      Graduated from Le Loi Secondary School as an excellent
-                      student
-                    </p>
-                  </div>
-                </li>
-                <li class="timeline-item">
-                  <div class="timeline-info">
-                    <span>JUN 2020-?</span>
-                  </div>
-                  <div class="timeline-marker"></div>
-                  <div class="timeline-content">
-                    <h3 class="timeline-title">HIGH SCHOOL</h3>
-                    <p>
-                      Currently studying enthusiastically at Hanoi Amsterdam
-                      High School for the Gifted
-                    </p>
-                  </div>
-                </li>
-                <li class="timeline-item period">
-                  <div class="timeline-info"></div>
-                  <div class="timeline-marker"></div>
-                  <div class="timeline-content">
-                    <h2 class="timeline-title">AFTER SCHOOL COURSES</h2>
-                  </div>
-                </li>
-                <li class="timeline-item">
-                  <div class="timeline-info">
-                    <span>MAR 2021</span>
-                  </div>
-                  <div class="timeline-marker"></div>
-                  <div class="timeline-content">
-                    <h3 class="timeline-title">SAT</h3>
-                    <p>Finished SAT INTENSIVE</p>
-                  </div>
-                </li>
-                <li class="timeline-item">
-                  <div class="timeline-info">
-                    <span>APR 2021</span>
-                  </div>
-                  <div class="timeline-marker"></div>
-                  <div class="timeline-content">
-                    <h3 class="timeline-title">Programming</h3>
-                    <p>
-                      Computer Advanced Course at MindX <br />
-                      Javascript
-                    </p>
-                  </div>
-                </li>
+              <ul id="dom_edu_course" class="timeline timeline-centered">
+               
               </ul>
             </div>
           </div>
@@ -237,8 +177,41 @@
             <div class="col-md-12 example-title">
               <h2>ACHIEVEMENTS</h2>
             </div>
-          </div>
-        </div>
+            <div id="post" style="background:#fffffe; margin-top:1px;color:#232946">
+              <div id="time">
+                <p>SEP 2020</p>
+              </div>
+              <div id="content">
+                <p>This is a sample text for testing</p>
+                <img src="icon/anonymous.jpg" style="height: 100px;">
+                <img src="icon/anonymous.jpg" style="height: 100px;">
+                <img src="icon/anonymous.jpg" style="height: 100px;">
+              </div>
+            </div>
+              <div id="post" style="background:#fffffe; margin-top:20px;color:#232946 ">
+                <div id="time">
+                  <p>SEP 2020</p>
+                </div>
+                <div id="content">
+                  <p>This is a sample text for testing</p>
+                  <img src="icon/anonymous.jpg" style="height: 100px;">
+                  <img src="icon/anonymous.jpg" style="height: 100px;">
+                  <img src="icon/anonymous.jpg" style="height: 100px;">
+                </div>
+              </div>
+              <div id="post" style="background:#fffffe; margin-top: 20px;color:#232946">
+                  <div id="time">
+                    <p>SEP 2020</p>
+                  </div>
+                  <div id="content">
+                    <p>This is a sample text for testing</p>
+                    <img src="icon/anonymous.jpg" style="height: 100px;">
+                    <img src="icon/anonymous.jpg" style="height: 100px;">
+                    <img src="icon/anonymous.jpg" style="height: 100px;">
+                  </div>
+            </div>
+        
+        
       </section>
       <!-- <section id="references">
         <div class="container-fluid">
@@ -300,37 +273,37 @@
             <div class="row">
               <form id="contact-form">
                 <div>
-                <div class="column col-md-6">
-                  <!-- Name input -->
-                  <div class="form-group">
-                    <input
-                      type="text"
-                      class="form-control"
-                      name="InputName"
-                      id="InputName"
-                      placeholder="Your name"
-                      required="required"
-                      data-error="Name is required."
-                    />
-                    <div class="help-block with-errors"></div>
+                  <div class="column col-md-6">
+                    <!-- Name input -->
+                    <div class="form-group">
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="InputName"
+                        id="InputName"
+                        placeholder="Your name"
+                        required="required"
+                        data-error="Name is required."
+                      />
+                      <div class="help-block with-errors"></div>
+                    </div>
+                  </div>
+                  <div class="column col-md-6">
+                    <!-- Email input -->
+                    <div class="form-group">
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="InputEmail"
+                        name="InputEmail"
+                        placeholder="Email"
+                        required="required"
+                        data-error="Email is required."
+                      />
+                      <div class="help-block with-errors"></div>
+                    </div>
                   </div>
                 </div>
-                <div class="column col-md-6">
-                  <!-- Email input -->
-                  <div class="form-group">
-                    <input
-                      type="email"
-                      class="form-control"
-                      id="InputEmail"
-                      name="InputEmail"
-                      placeholder="Email"
-                      required="required"
-                      data-error="Email is required."
-                    />
-                    <div class="help-block with-errors"></div>
-                  </div>
-                </div>
-              </div>
                 <div class="column col-md-12">
                   <!-- Email input -->
                   <div class="form-group">
@@ -369,6 +342,30 @@
       </section>
     </div>
 
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-firestore.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      var firebaseConfig = {
+        apiKey: "AIzaSyAmF-Z7X3jF7VBuJoAMDr0qHSYh6GTcNZA",
+        authDomain: "narcissistic-project.firebaseapp.com",
+        projectId: "narcissistic-project",
+        storageBucket: "narcissistic-project.appspot.com",
+        messagingSenderId: "403827207299",
+        appId: "1:403827207299:web:18af008bf725eb87a37fb6",
+        measurementId: "G-1YQW4ED0JG",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+    <script src="./renderDataFromFireBase.js"></script>
     <script type="text/javascript" src="./packet/particles.js"></script>
     <script type="text/javascript" src="./packet/app.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
@@ -419,10 +416,10 @@
       src="respond.min.js"
       tppabs="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"
     ></script>
-<script src="WOW-master/WOW-master/dist/wow.min.js"></script>
-<script>
-  new WOW().init();
-  </script>
+    <script src="WOW-master/WOW-master/dist/wow.min.js"></script>
+    <script>
+      new WOW().init();
+    </script>
     <script>
       let alertNe = (title, content, status) => {
         Swal.fire(title, content, status);
@@ -452,7 +449,7 @@
           },
           success: function (data) {
             //    sweetAlert(data.status,data.response);
-            alertNe("Mail Sent", data.response,data.status)
+            alertNe("Mail Sent", data.response, data.status);
             console.log("success");
           },
         });

@@ -1,3 +1,4 @@
+
 *{
     margin: 0px;
     padding: 0px;
@@ -35,9 +36,9 @@
   color: #fffffe;
 
 }
-#achievements p{
+/* #achievements p{
   color: #b8c1ec;
-}
+} */
 #references{
   background: #eebbc3;
 }
@@ -70,9 +71,7 @@ body{
 
 }
 
-.row > *{
-  padding: 10px 100px;
-}
+
 .hoverable {
     display: inline-block;
     backface-visibility: hidden;
@@ -204,7 +203,7 @@ body{
 }
 
 .container-fluid .row {
-  padding: 0 0 4em 0;
+  padding: 10px 100px;
 }
 
 

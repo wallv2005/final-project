@@ -1,15 +1,14 @@
 
 let getData = async ()=>{
-    let result = await firebase.firestore().collection('thanhwvan').get()
-    console.log(result);
+    let result = await firebase.firestore().collection('cv').get()
     let data = await getDataFromDocs(result.docs)
     console.log(data)
 }
 
-// getData()
+getData()
 
 let createData = async (d)=>{
-    await firebase.firestore().collection('thanhwvan').add(d)
+    await firebase.firestore().collection('cv').add(d)
 }
 let getDataFromDoc = (doc)=>{
     let data = doc.data()
@@ -20,7 +19,7 @@ let getDataFromDoc = (doc)=>{
 let getDataFromDocs = (docs)=>{
    let result =[]
    for(let doc of docs){
-       let data = utils.getDataFromDoc(doc)
+       let data = getDataFromDoc(doc)
        result.push(data)
     }
    return result
