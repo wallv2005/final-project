@@ -3,7 +3,7 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    
+
 }
 #header{
   background: #232946;
@@ -70,8 +70,32 @@ body{
     
 
 }
+.achievements-pics {
+  list-style: none;
+  width: 100%;
+  margin-top: 70px;
+}
+* {
+  box-sizing: border-box;
+}
 
 
+
+ul {
+  display: block;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+}
+
+.achievements-pics li figure img {
+  opacity: 0.7;
+  transform: scale(1.15);
+  transition: transform 0.5s, opacity 0.5s;
+}
 .hoverable {
     display: inline-block;
     backface-visibility: hidden;
@@ -121,6 +145,7 @@ body{
     opacity: 1;
     transform: translateY(-5px);
   }
+
 .intro-content{
     position: absolute;
     top:50%;
